@@ -1,9 +1,9 @@
 name: Update gist
 on:
-  repository_dispatch:
-    types: [build-event]
-  schedule:
-    - cron: "0 0 * * *"
+  push:  # 모든 브랜치에 대해 push 시 동작
+    branches:
+      - '**'
+
 jobs:
   update-gist:
     runs-on: ubuntu-latest
